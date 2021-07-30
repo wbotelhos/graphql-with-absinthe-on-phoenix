@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :graphql_with_absinthe_on_phoenix, GraphqlWithAbsintheOnPhoenix.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "",
   database: "graphql_with_absinthe_on_phoenix_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
