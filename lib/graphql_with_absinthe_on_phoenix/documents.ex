@@ -208,4 +208,10 @@ defmodule GraphqlWithAbsintheOnPhoenix.Documents do
   def change_verse(%Verse{} = verse, attrs \\ %{}) do
     Verse.changeset(verse, attrs)
   end
+
+  def verses_for_book(book) do
+    Verse
+    |> where(book_id: ^book.id)
+    |> Repo.all()
+  end
 end
