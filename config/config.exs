@@ -14,7 +14,11 @@ config :graphql_with_absinthe_on_phoenix,
 config :graphql_with_absinthe_on_phoenix, GraphqlWithAbsintheOnPhoenixWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "ZG2sN5QjU1jyhRJC8QZxuXDBgyp8AByoRgZkO88k9JTPTPXcdSVk7pX9R3t5RB9J",
-  render_errors: [view: GraphqlWithAbsintheOnPhoenixWeb.ErrorView, accepts: ~w(json), layout: false],
+  render_errors: [
+    view: GraphqlWithAbsintheOnPhoenixWeb.ErrorView,
+    accepts: ~w(json),
+    layout: false
+  ],
   pubsub_server: GraphqlWithAbsintheOnPhoenix.PubSub,
   live_view: [signing_salt: "H7OIkczM"]
 

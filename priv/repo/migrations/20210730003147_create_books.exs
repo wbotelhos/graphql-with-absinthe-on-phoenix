@@ -8,6 +8,5 @@ defmodule GraphqlWithAbsintheOnPhoenix.Repo.Migrations.CreateBooks do
 
       timestamps()
     end
-
   end
 end

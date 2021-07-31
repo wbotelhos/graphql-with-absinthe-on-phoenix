@@ -31,11 +31,21 @@ defmodule GraphqlWithAbsintheOnPhoenixWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("graphql_with_absinthe_on_phoenix.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("graphql_with_absinthe_on_phoenix.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("graphql_with_absinthe_on_phoenix.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("graphql_with_absinthe_on_phoenix.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("graphql_with_absinthe_on_phoenix.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("graphql_with_absinthe_on_phoenix.repo.query.total_time",
+        unit: {:native, :millisecond}
+      ),
+      summary("graphql_with_absinthe_on_phoenix.repo.query.decode_time",
+        unit: {:native, :millisecond}
+      ),
+      summary("graphql_with_absinthe_on_phoenix.repo.query.query_time",
+        unit: {:native, :millisecond}
+      ),
+      summary("graphql_with_absinthe_on_phoenix.repo.query.queue_time",
+        unit: {:native, :millisecond}
+      ),
+      summary("graphql_with_absinthe_on_phoenix.repo.query.idle_time",
+        unit: {:native, :millisecond}
+      ),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
