@@ -15,7 +15,7 @@ defmodule GraphqlWithAbsintheOnPhoenix.Documents.Verse do
   @doc false
   def changeset(verse, attrs) do
     verse
-    |> cast(attrs, [:chapter, :number, :body])
+    |> cast(attrs, [:chapter, :number, :body, :book_id])
     |> validate_required([:chapter, :number, :body])
   end
 end
