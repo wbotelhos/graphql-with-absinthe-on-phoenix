@@ -209,9 +209,17 @@ defmodule GraphqlWithAbsintheOnPhoenix.Documents do
     Verse.changeset(verse, attrs)
   end
 
-  def verses_for_book(book) do
+  # Dataloader
+
+  def datasource() do
+    Dataloader.Ecto.new(Repo, query: &query/2)
+  end
+
+  defp query(Verse, %{scope: :book}) do
     Verse
-    |> where(book_id: ^book.id)
-    |> Repo.all()
+  end
+
+  defp query(module, _) do
+    module
   end
 end

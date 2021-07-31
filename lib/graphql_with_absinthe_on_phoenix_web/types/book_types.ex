@@ -1,6 +1,9 @@
 defmodule GraphqlWithAbsintheOnPhoenixWeb.Types.BookTypes do
   use Absinthe.Schema.Notation
 
+  import Absinthe.Resolution.Helpers, only: [dataloader: 3]
+
+  alias GraphqlWithAbsintheOnPhoenix.Documents
   alias GraphqlWithAbsintheOnPhoenixWeb.Resolvers
 
   object :book do
@@ -11,7 +14,7 @@ defmodule GraphqlWithAbsintheOnPhoenixWeb.Types.BookTypes do
     field :verses, list_of(:verse) do
       arg(:limit, :integer)
 
-      resolve(&Resolvers.Verses.verses_for_book/3)
+      resolve(dataloader(Documents, :verses, args: %{scope: :book}))
     end
   end
 
