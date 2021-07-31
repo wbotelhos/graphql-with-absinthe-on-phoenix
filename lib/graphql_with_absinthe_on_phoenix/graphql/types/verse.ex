@@ -1,4 +1,4 @@
-defmodule GraphqlWithAbsintheOnPhoenixWeb.Types.VerseTypes do
+defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Types.Verse do
   use Absinthe.Schema.Notation
 
   object :verse do
@@ -8,9 +8,5 @@ defmodule GraphqlWithAbsintheOnPhoenixWeb.Types.VerseTypes do
     field :body, non_null(:string)
 
     field :book, :book
-  end
-
-  object :list_verses do
-    field :verses, list_of(:verse)
   end
 end

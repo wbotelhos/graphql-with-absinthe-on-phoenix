@@ -1,4 +1,4 @@
-defmodule GraphqlWithAbsintheOnPhoenixWeb.Resolvers.Books do
+defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Resolvers.Book do
   alias GraphqlWithAbsintheOnPhoenix.Documents
 
   def get_book(%{id: id}, _context) do

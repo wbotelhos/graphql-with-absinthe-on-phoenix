@@ -8,7 +8,7 @@ defmodule GraphqlWithAbsintheOnPhoenixWeb.Router do
   scope "/api" do
     pipe_through :api
 
-    forward "/", Absinthe.Plug, schema: GraphqlWithAbsintheOnPhoenixWeb.Schema
+    forward "/", Absinthe.Plug, schema: GraphqlWithAbsintheOnPhoenix.GraphQL.Schema
   end
 
   # Enables LiveDashboard only for development
