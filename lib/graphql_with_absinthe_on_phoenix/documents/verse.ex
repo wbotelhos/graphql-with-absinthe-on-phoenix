@@ -6,7 +6,8 @@ defmodule GraphqlWithAbsintheOnPhoenix.Documents.Verse do
     field :body, :string
     field :chapter, :integer
     field :number, :integer
-    field :book_id, :id
+
+    belongs_to :book, GraphqlWithAbsintheOnPhoenix.Documents.Book
 
     timestamps()
   end
