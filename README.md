@@ -1,19 +1,62 @@
-# GraphqlWithAbsintheOnPhoenix
+# GraphQL with Absinthe on Phoenix
 
-To start your Phoenix server:
+A guide teaching how to use Query, Dataloader, Mutation, Subscription and Authentication with GraphQL using Absinthe on Phoenix.
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server`
+Read the article at:
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+- [GraphQL with Absinthe on Phoenix - Query and Dataloader](https://www.wbotelhos.com/graphql-with-absinthe-on-phoenix-query-and-dataloader).
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Setup
 
-## Learn more
+```sh
+# clone the project
+git clone git@github.com:wbotelhos/graphql-with-absinthe-on-phoenix.git
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+# access the project
+cd graphql-with-absinthe-on-phoenix
+
+# installs the dependencies
+mix deps.get
+
+# creates the database
+mix ecto.setup
+
+# run the server
+mix phx.server
+
+# open the browser
+open localhost:4000
+
+## GraphQL Query
+
+```json
+{
+  books(limit: 2) {
+    id
+    name
+    position
+    verses(limit: 2) {
+      id
+      chapter
+      number
+      body
+    }
+  }
+}
+```
+
+```json
+{
+  book(id: 1) {
+    id
+    name
+    position
+    verses(limit: 2) {
+      id
+      chapter
+      number
+      body
+    }
+  }
+}
+```
