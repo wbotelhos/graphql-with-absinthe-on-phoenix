@@ -2,13 +2,19 @@ defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Schema do
   use Absinthe.Schema
 
   alias GraphqlWithAbsintheOnPhoenix.Documents
+  alias GraphqlWithAbsintheOnPhoenix.GraphQL
 
-  import_types(GraphqlWithAbsintheOnPhoenix.GraphQL.Types.Index)
-  import_types(GraphqlWithAbsintheOnPhoenix.GraphQL.Queries.Index)
+  import_types(GraphQL.Mutations.Index)
+  import_types(GraphQL.Queries.Index)
+  import_types(GraphQL.Types.Index)
 
   query do
     import_fields(:book_queries)
     import_fields(:verse_queries)
+  end
+
+  mutation do
+    import_fields(:book_mutations)
   end
 
   # Dataloader

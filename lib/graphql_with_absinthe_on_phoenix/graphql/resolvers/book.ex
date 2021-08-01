@@ -1,5 +1,16 @@
 defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Resolvers.Book do
   alias GraphqlWithAbsintheOnPhoenix.Documents
+  alias GraphqlWithAbsintheOnPhoenix.GraphQL
+
+  def create_book(args, _context) do
+    case Documents.create_book(args) do
+      {:ok, book} ->
+        {:ok, book}
+
+      {:error, changeset} ->
+        {:error, message: "Book creation failed!", details: GraphQL.Errors.extract(changeset)}
+    end
+  end
 
   def get_book(%{id: id}, _context) do
     {:ok, Documents.get_book!(id)}
