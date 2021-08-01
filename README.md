@@ -4,7 +4,8 @@ A guide teaching how to use Query, Dataloader, Mutation, Subscription and Authen
 
 Read the article at:
 
-- [GraphQL with Absinthe on Phoenix - Query and Dataloader](https://www.wbotelhos.com/graphql-with-absinthe-on-phoenix-query-and-dataloader).
+- [GraphQL with Absinthe on Phoenix - Query and Dataloader](https://www.wbotelhos.com/graphql-with-absinthe-on-phoenix-query-and-dataloader);
+- [GraphQL with Absinthe on Phoenix - Mutation](https://www.wbotelhos.com/graphql-with-absinthe-on-phoenix-mutation);
 
 ## Setup
 
@@ -26,8 +27,11 @@ mix phx.server
 
 # open the browser
 open localhost:4000
+```
 
-## GraphQL Query
+## GraphQL Queries
+
+**Books**:
 
 ```json
 {
@@ -44,6 +48,8 @@ open localhost:4000
   }
 }
 ```
+
+**Book**:
 
 ```json
 {
