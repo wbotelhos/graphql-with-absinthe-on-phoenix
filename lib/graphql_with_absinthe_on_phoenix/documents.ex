@@ -7,6 +7,7 @@ defmodule GraphqlWithAbsintheOnPhoenix.Documents do
   alias GraphqlWithAbsintheOnPhoenix.Repo
 
   alias GraphqlWithAbsintheOnPhoenix.Documents.Book
+  alias GraphqlWithAbsintheOnPhoenix.Documents.Verse
 
   @doc """
   Returns the list of Books.
@@ -61,6 +62,7 @@ defmodule GraphqlWithAbsintheOnPhoenix.Documents do
   def create_book(attrs \\ %{}) do
     %Book{}
     |> Book.changeset(attrs)
+    |> Ecto.Changeset.cast_assoc(:verses, with: &Verse.changeset/2)
     |> Repo.insert()
   end
 

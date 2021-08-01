@@ -9,4 +9,10 @@ defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Types.Verse do
 
     field :book, :book
   end
+
+  input_object :verse_create_inputs do
+    field :chapter, non_null(:integer)
+    field :number, non_null(:integer)
+    field :body, non_null(:string)
+  end
 end
