@@ -35,6 +35,7 @@ defmodule GraphqlWithAbsintheOnPhoenix.MixProject do
     [
       {:absinthe_plug, "~> 1.5"},
       {:absinthe, "~> 1.6"},
+      {:argon2_elixir, "~> 2.4"},
       {:dataloader, "~> 1.0"},
       {:ecto_sql, "~> 3.4"},
       {:gettext, "~> 0.11"},

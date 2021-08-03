@@ -8,6 +8,12 @@ defmodule GraphqlWithAbsintheOnPhoenix.Accounts do
 
   alias GraphqlWithAbsintheOnPhoenix.Accounts.User
 
+  def authenticate(email, password) do
+    User
+    |> Repo.get_by(email: email)
+    |> Argon2.check_pass(password)
+  end
+
   @doc """
   Returns the list of users.
 
