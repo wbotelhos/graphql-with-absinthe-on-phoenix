@@ -15,6 +15,7 @@ defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Schema do
 
   mutation do
     import_fields(:book_mutations)
+    import_fields(:session_mutations)
   end
 
   # Dataloader

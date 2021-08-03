@@ -4,5 +4,7 @@ defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Types do
   alias GraphqlWithAbsintheOnPhoenix.GraphQL.Types
 
   import_types(Types.Book)
+  import_types(Types.Session)
+  import_types(Types.User)
   import_types(Types.Verse)
 end

@@ -4,4 +4,5 @@ defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Mutations do
   alias GraphqlWithAbsintheOnPhoenix.GraphQL.Mutations
 
   import_types(Mutations.Book)
+  import_types(Mutations.Session)
 end
