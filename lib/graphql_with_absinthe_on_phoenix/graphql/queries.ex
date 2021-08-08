@@ -1,4 +1,4 @@
-defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Queries.Index do
+defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Queries do
   use Absinthe.Schema.Notation
 
   alias GraphqlWithAbsintheOnPhoenix.GraphQL.Queries

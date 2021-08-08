@@ -4,9 +4,9 @@ defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Schema do
   alias GraphqlWithAbsintheOnPhoenix.Documents
   alias GraphqlWithAbsintheOnPhoenix.GraphQL
 
-  import_types(GraphQL.Mutations.Index)
-  import_types(GraphQL.Queries.Index)
-  import_types(GraphQL.Types.Index)
+  import_types(GraphQL.Mutations)
+  import_types(GraphQL.Queries)
+  import_types(GraphQL.Types)
 
   query do
     import_fields(:book_queries)
