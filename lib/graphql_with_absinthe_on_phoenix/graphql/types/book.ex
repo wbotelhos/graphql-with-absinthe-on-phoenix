@@ -10,6 +10,8 @@ defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Types.Book do
     field :name, non_null(:string)
     field :position, non_null(:integer)
 
+    field :user, non_null(:user)
+
     field :verses, list_of(:verse) do
       arg(:limit, :integer)
 

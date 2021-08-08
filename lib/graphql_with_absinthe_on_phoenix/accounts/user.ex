@@ -9,6 +9,8 @@ defmodule GraphqlWithAbsintheOnPhoenix.Accounts.User do
     field :password_hash, :string
     field :password, :string, virtual: true
 
+    has_many :books, GraphqlWithAbsintheOnPhoenix.Documents.Book
+
     timestamps()
   end
 

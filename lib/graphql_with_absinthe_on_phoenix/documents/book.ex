@@ -6,6 +6,8 @@ defmodule GraphqlWithAbsintheOnPhoenix.Documents.Book do
     field :name, :string
     field :position, :integer
 
+    belongs_to :user, GraphqlWithAbsintheOnPhoenix.Accounts.User
+
     has_many :verses, GraphqlWithAbsintheOnPhoenix.Documents.Verse
 
     timestamps()
