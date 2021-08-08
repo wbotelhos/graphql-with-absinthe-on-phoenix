@@ -3,6 +3,8 @@ defmodule GraphqlWithAbsintheOnPhoenixWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+
+    plug GraphqlWithAbsintheOnPhoenixWeb.Plugs.SetCurrentUser
   end
 
   scope "/api" do

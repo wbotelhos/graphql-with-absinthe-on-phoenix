@@ -2,8 +2,11 @@ defmodule GraphqlWithAbsintheOnPhoenix.GraphQL.Resolvers.Book do
   alias GraphqlWithAbsintheOnPhoenix.Documents
   alias GraphqlWithAbsintheOnPhoenix.GraphQL
 
-  def create_book(args, _context) do
-    case Documents.create_book(args) do
+  def create_book(args, %{context: %{current_user: current_user}}) do
+    args
+    |> Map.put(:current_user, current_user)
+    |> Documents.create_book()
+    |> case do
       {:ok, book} ->
         {:ok, book}
 

@@ -63,6 +63,7 @@ defmodule GraphqlWithAbsintheOnPhoenix.Documents do
     %Book{}
     |> Book.changeset(attrs)
     |> Ecto.Changeset.cast_assoc(:verses, with: &Verse.changeset/2)
+    |> Ecto.Changeset.put_assoc(:user, attrs.current_user)
     |> Repo.insert()
   end
 
