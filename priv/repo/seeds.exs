@@ -1,5 +1,5 @@
-alias GraphqlWithAbsintheOnPhoenix.Accounts
-alias GraphqlWithAbsintheOnPhoenix.Documents
+alias App.Accounts
+alias App.Documents
 
 {:ok, current_user} = Accounts.create_user(%{ email: "wbotelhos@gmail.com", password: "123mudar" })
 

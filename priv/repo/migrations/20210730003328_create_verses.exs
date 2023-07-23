@@ -1,4 +1,4 @@
-defmodule GraphqlWithAbsintheOnPhoenix.Repo.Migrations.CreateVerses do
+defmodule App.Repo.Migrations.CreateVerses do
   use Ecto.Migration
 
   def change do

@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :graphql_with_absinthe_on_phoenix, GraphqlWithAbsintheOnPhoenix.Repo,
+config :app, App.Repo,
   username: "postgres",
   password: "",
   hostname: "localhost",
-  database: "graphql_with_absinthe_on_phoenix_dev",
+  database: "app_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,7 +16,7 @@ config :graphql_with_absinthe_on_phoenix, GraphqlWithAbsintheOnPhoenix.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we can use it
 # to bundle .js and .css sources.
-config :graphql_with_absinthe_on_phoenix, GraphqlWithAbsintheOnPhoenixWeb.Endpoint,
+config :app, AppWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
@@ -50,7 +50,7 @@ config :graphql_with_absinthe_on_phoenix, GraphqlWithAbsintheOnPhoenixWeb.Endpoi
 # different ports.
 
 # Enable dev routes for dashboard and mailbox
-config :graphql_with_absinthe_on_phoenix, dev_routes: true
+config :app, dev_routes: true
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

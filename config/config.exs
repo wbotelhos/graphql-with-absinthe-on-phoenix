@@ -7,17 +7,17 @@
 # General application configuration
 import Config
 
-config :graphql_with_absinthe_on_phoenix,
-  ecto_repos: [GraphqlWithAbsintheOnPhoenix.Repo]
+config :app,
+  ecto_repos: [App.Repo]
 
 # Configures the endpoint
-config :graphql_with_absinthe_on_phoenix, GraphqlWithAbsintheOnPhoenixWeb.Endpoint,
+config :app, AppWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [
-    formats: [json: GraphqlWithAbsintheOnPhoenixWeb.ErrorJSON],
+    formats: [json: AppWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: GraphqlWithAbsintheOnPhoenix.PubSub,
+  pubsub_server: App.PubSub,
   live_view: [signing_salt: "H7OIkczM"]
 
 # Configures Elixir's Logger

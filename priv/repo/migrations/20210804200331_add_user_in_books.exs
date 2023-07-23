@@ -1,4 +1,4 @@
-defmodule GraphqlWithAbsintheOnPhoenix.Repo.Migrations.AddUserInBooks do
+defmodule App.Repo.Migrations.AddUserInBooks do
   use Ecto.Migration
 
   def change do
