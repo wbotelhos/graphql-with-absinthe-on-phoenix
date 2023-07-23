@@ -33,7 +33,7 @@ open localhost:4000
 
 **Books**:
 
-```json
+```gql
 {
   books(limit: 2) {
     id
@@ -51,7 +51,7 @@ open localhost:4000
 
 **Book**:
 
-```json
+```gql
 {
   book(id: 1) {
     id
@@ -62,6 +62,63 @@ open localhost:4000
       chapter
       number
       body
+    }
+  }
+}
+
+```
+
+**Create Book**:
+
+```gql
+mutation {
+  createBook(name: "Book Name", position: 4) {
+    id
+    name
+    position
+  }
+}
+```
+
+**Create Book (Nested)**:
+
+```gql
+mutation {
+  createBook(name: "Números", position: 4, verses: [{chapter: 1, number: 1, body: "No segundo ano..."}, {chapter: 1, number: 2, body: "Levantai o censo..."}]) {
+    id
+    name
+    position
+    verses {
+      body
+      chapter
+      id
+      number
+    }
+  }
+}
+```
+
+**Signup**:
+
+```gql
+mutation {
+  signup(email: "wbotelhos@gmail.com", password: "password") {
+    token
+    user {
+      email
+    }
+  }
+}
+```
+
+**Signin**:
+
+```gql
+mutation {
+  signin(email: "wbotelhos@gmail.com", password: "password") {
+    token
+    user {
+      email
     }
   }
 }
