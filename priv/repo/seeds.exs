@@ -59,14 +59,4 @@ alias App.Documents
     ]
   }
 ]
-|> Enum.each(fn attrs ->
-  {:ok, book} = Documents.create_book(attrs)
-
-  attrs
-  |> Map.get(:verses)
-  |> Enum.each(fn verse_attrs ->
-    verse_attrs
-    |> Map.put(:book_id, book.id)
-    |> Documents.create_verse()
-  end)
-end)
+|> Enum.each(&Documents.create_book/1)
