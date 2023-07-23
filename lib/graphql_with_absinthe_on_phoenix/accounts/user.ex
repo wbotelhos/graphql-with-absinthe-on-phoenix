@@ -2,8 +2,6 @@ defmodule GraphqlWithAbsintheOnPhoenix.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias GraphqlWithAbsintheOnPhoenix.Accounts.User
-
   schema "users" do
     field :email, :string
     field :password_hash, :string
