@@ -1,11 +1,11 @@
 # This file is responsible for configuring your application
-# and its dependencies with the aid of the Mix.Config module.
+# and its dependencies with the aid of the Config module.
 #
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
+import Config
 
 config :graphql_with_absinthe_on_phoenix,
   ecto_repos: [GraphqlWithAbsintheOnPhoenix.Repo]
@@ -13,10 +13,8 @@ config :graphql_with_absinthe_on_phoenix,
 # Configures the endpoint
 config :graphql_with_absinthe_on_phoenix, GraphqlWithAbsintheOnPhoenixWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "ZG2sN5QjU1jyhRJC8QZxuXDBgyp8AByoRgZkO88k9JTPTPXcdSVk7pX9R3t5RB9J",
   render_errors: [
-    view: GraphqlWithAbsintheOnPhoenixWeb.ErrorView,
-    accepts: ~w(json),
+    formats: [json: GraphqlWithAbsintheOnPhoenixWeb.ErrorJSON],
     layout: false
   ],
   pubsub_server: GraphqlWithAbsintheOnPhoenix.PubSub,
@@ -32,4 +30,4 @@ config :phoenix, :json_library, Jason
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env()}.exs"
+import_config "#{config_env()}.exs"

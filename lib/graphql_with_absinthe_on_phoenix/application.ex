@@ -5,12 +5,13 @@ defmodule GraphqlWithAbsintheOnPhoenix.Application do
 
   use Application
 
+  @impl true
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
-      GraphqlWithAbsintheOnPhoenix.Repo,
       # Start the Telemetry supervisor
       GraphqlWithAbsintheOnPhoenixWeb.Telemetry,
+      # Start the Ecto repository
+      GraphqlWithAbsintheOnPhoenix.Repo,
       # Start the PubSub system
       {Phoenix.PubSub, name: GraphqlWithAbsintheOnPhoenix.PubSub},
       # Start the Endpoint (http/https)
@@ -27,6 +28,7 @@ defmodule GraphqlWithAbsintheOnPhoenix.Application do
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
+  @impl true
   def config_change(changed, _new, removed) do
     GraphqlWithAbsintheOnPhoenixWeb.Endpoint.config_change(changed, removed)
     :ok

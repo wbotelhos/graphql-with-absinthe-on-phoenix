@@ -22,29 +22,56 @@ defmodule GraphqlWithAbsintheOnPhoenixWeb.Telemetry do
   def metrics do
     [
       # Phoenix Metrics
+      summary("phoenix.endpoint.start.system_time",
+        unit: {:native, :millisecond}
+      ),
       summary("phoenix.endpoint.stop.duration",
+        unit: {:native, :millisecond}
+      ),
+      summary("phoenix.router_dispatch.start.system_time",
+        tags: [:route],
+        unit: {:native, :millisecond}
+      ),
+      summary("phoenix.router_dispatch.exception.duration",
+        tags: [:route],
         unit: {:native, :millisecond}
       ),
       summary("phoenix.router_dispatch.stop.duration",
         tags: [:route],
         unit: {:native, :millisecond}
       ),
+      summary("phoenix.socket_connected.duration",
+        unit: {:native, :millisecond}
+      ),
+      summary("phoenix.channel_joined.duration",
+        unit: {:native, :millisecond}
+      ),
+      summary("phoenix.channel_handled_in.duration",
+        tags: [:event],
+        unit: {:native, :millisecond}
+      ),
 
       # Database Metrics
       summary("graphql_with_absinthe_on_phoenix.repo.query.total_time",
-        unit: {:native, :millisecond}
+        unit: {:native, :millisecond},
+        description: "The sum of the other measurements"
       ),
       summary("graphql_with_absinthe_on_phoenix.repo.query.decode_time",
-        unit: {:native, :millisecond}
+        unit: {:native, :millisecond},
+        description: "The time spent decoding the data received from the database"
       ),
       summary("graphql_with_absinthe_on_phoenix.repo.query.query_time",
-        unit: {:native, :millisecond}
+        unit: {:native, :millisecond},
+        description: "The time spent executing the query"
       ),
       summary("graphql_with_absinthe_on_phoenix.repo.query.queue_time",
-        unit: {:native, :millisecond}
+        unit: {:native, :millisecond},
+        description: "The time spent waiting for a database connection"
       ),
       summary("graphql_with_absinthe_on_phoenix.repo.query.idle_time",
-        unit: {:native, :millisecond}
+        unit: {:native, :millisecond},
+        description:
+          "The time the connection spent waiting before being checked out for the query"
       ),
 
       # VM Metrics

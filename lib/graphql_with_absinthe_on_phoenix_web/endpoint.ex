@@ -7,14 +7,11 @@ defmodule GraphqlWithAbsintheOnPhoenixWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_graphql_with_absinthe_on_phoenix_key",
-    signing_salt: "1B6X410x"
+    signing_salt: "1B6X410x",
+    same_site: "Lax"
   ]
 
-  socket "/socket", GraphqlWithAbsintheOnPhoenixWeb.UserSocket,
-    websocket: true,
-    longpoll: false
-
-  socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
+  # socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -24,7 +21,7 @@ defmodule GraphqlWithAbsintheOnPhoenixWeb.Endpoint do
     at: "/",
     from: :graphql_with_absinthe_on_phoenix,
     gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: GraphqlWithAbsintheOnPhoenixWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -32,10 +29,6 @@ defmodule GraphqlWithAbsintheOnPhoenixWeb.Endpoint do
     plug Phoenix.CodeReloader
     plug Phoenix.Ecto.CheckRepoStatus, otp_app: :graphql_with_absinthe_on_phoenix
   end
-
-  plug Phoenix.LiveDashboard.RequestLogger,
-    param_key: "request_logger",
-    cookie_key: "request_logger"
 
   plug Plug.RequestId
   plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
