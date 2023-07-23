@@ -33,17 +33,17 @@ defmodule App.MixProject do
   defp deps do
     [
       {:absinthe_plug, "~> 1.5"},
-      {:absinthe, "~> 1.6"},
-      {:argon2_elixir, "~> 2.4"},
+      {:absinthe, "~> 1.7"},
+      {:argon2_elixir, "~> 3.1"},
       {:dataloader, "~> 1.0"},
-      {:phoenix, "~> 1.7.7"},
+      {:phoenix, "~> 1.7"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.10"},
-      {:postgrex, ">= 0.0.0"},
+      {:postgrex, "~> 0.17"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
-      {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:jason, "~> 1.4"},
+      {:plug_cowboy, "~> 2.6"}
     ]
   end
 
