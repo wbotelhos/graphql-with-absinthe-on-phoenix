@@ -1,7 +1,11 @@
+alias GraphqlWithAbsintheOnPhoenix.Accounts
 alias GraphqlWithAbsintheOnPhoenix.Documents
+
+{:ok, current_user} = Accounts.create_user(%{ email: "wbotelhos@gmail.com", password: "123mudar" })
 
 [
   %{
+    current_user: current_user,
     name: "Gênesis",
     position: 1,
     verses: [
@@ -19,6 +23,7 @@ alias GraphqlWithAbsintheOnPhoenix.Documents
     ]
   },
   %{
+    current_user: current_user,
     name: "Êxodo",
     position: 2,
     verses: [
@@ -36,6 +41,7 @@ alias GraphqlWithAbsintheOnPhoenix.Documents
     ]
   },
   %{
+    current_user: current_user,
     name: "Levítico",
     position: 3,
     verses: [
