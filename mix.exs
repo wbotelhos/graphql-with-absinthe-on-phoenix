@@ -36,6 +36,7 @@ defmodule App.MixProject do
       {:absinthe, "~> 1.7"},
       {:argon2_elixir, "~> 3.1"},
       {:dataloader, "~> 1.0"},
+      {:cors_plug, "~> 3.0"},
       {:phoenix, "~> 1.7"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.10"},

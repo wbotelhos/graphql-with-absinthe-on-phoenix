@@ -31,6 +31,7 @@ defmodule AppWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug CORSPlug, origin: ~r/^https?:\/\/localhost:\d{4}$/
   plug AppWeb.Plugs.SetCurrentUser
   plug Absinthe.Plug, schema: App.GraphQL.Schema
 end
